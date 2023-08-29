@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Header from './components/Header/Header'
+import Cadastro from "./components/Cadastros/Cadastros";
+import List from './components/List/List';
+
+import { useState } from 'react'
 
 function App() {
+  const [registers, setRegisters] = useState([]);
+
+  const newRegister = (newRegister) => {
+    setRegisters([...registers, newRegister]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="form-container">
+        <Cadastro newRegister={newRegister} />
+        <List registers={registers} />
+      </div>
+    </>
+
   );
 }
 
