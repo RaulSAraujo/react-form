@@ -1,15 +1,13 @@
 import './styles.css'
 
-function List({ registers }) {
+function List({ tarefas }) {
     return (
         <>
-            <h2 className="list-header">Lista de cadastros</h2>
+            <h2 className="list-header">Lista de tarefas</h2>
             <ul>
-                {registers.map((register, index) => (
-                    <li className="registro" key={index}>
-                        <strong>Nome:</strong> {register.name},{' '}
-                        <strong>Email:</strong> {register.email},{' '}
-                        <strong>Idade:</strong> {register.age}
+                {tarefas.map((tarefa, index) => (
+                    <li className="tarefas" key={index}>
+                        {tarefa}
                     </li>
                 ))}
             </ul>

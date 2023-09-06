@@ -1,9 +1,10 @@
 import './styles.css'
 
-function Header() {
+function Header({ user }) {
+
     return (
         <header className='Header'>
-            <h1>CADASTRO</h1>
+            <h1>{user}, sua lista de tarefas</h1>
         </header>
     )
 }
